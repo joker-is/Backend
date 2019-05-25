@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-//ARTS
+app.options('*', cors());
+
 app.get('/api/emailSubscribers', cors(), (req, res) => {
   emailSubscribersService.getAllAvailableEmails(
     resources => res.json(resources),
