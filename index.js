@@ -28,6 +28,7 @@ app.get('/api/allEmailSubscribers', cors(), (req, res) => {
 });
 
 app.post('/api/emailSubscriber', cors(), (req, res) => {
+  console.log(req.body);
   emailSubscribersService.createSubscriber(
     req.body,
     resources => res.json(resources),
