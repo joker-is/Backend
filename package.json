@@ -1,5 +1,5 @@
 {
-  "name": "Mansion-de-Subastas",
+  "name": "Joker-Backend",
   "version": "1.0.0",
   "scripts": {
     "start": "node index.js",
@@ -9,8 +9,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.3",
     "mongodb": "^3.1.6",
-    "mongoose": "^5.3.1",
-    "node": "^12.3.1"
+    "mongoose": "^5.3.1"
   },
   "devDependencies": {}
 }
