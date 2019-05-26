@@ -35,6 +35,7 @@ app.post('/api/emailSubscriber', cors(), (req, res) => {
     err => res.status(err.message).send()
   );
 });
+
 app.post('/api/emailSubscriber/:id', cors(), (req, res) => {
   emailSubscribersService.deactivateEmail(
     req.params.id,
