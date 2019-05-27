@@ -5,6 +5,7 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 8000;
 const emailSubscribersService = require('./services/emailSubscribersService');
+const adminUserService = require('./services/adminUserService');
 
 app.use(bodyParser.json());
 
@@ -43,3 +44,31 @@ app.post('/api/emailSubscriber/:id', cors(), (req, res) => {
     err => res.status(err.message).send()
   );
 });
+
+// USERS
+
+app.post('/api/adminRegister', function(req, res) {
+  adminUserService.createAdminUser(
+    req.body,
+    resources => res.json(resources),
+    err => res.status(err.message).send()
+  );
+});
+
+app.post('/api/adminLogin', function(req, res) {
+  adminUserService.loginAdminUser(
+    req.body,
+    resources => res.json(resources),
+    err => res.status(err.message).send()
+  );
+});
+
+app.post('/api/adminDeactivate/', function(req, res) {
+  adminUserService.deactivateAdminUser(
+    req.body,
+    resources => res.json(resources),
+    err => res.status(err.message).send()
+  );
+});
+
+//TODO: Deactivate adminUser
